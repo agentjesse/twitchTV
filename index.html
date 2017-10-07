@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Twitch TV API</title>
-  <!-- first load bootstrap css -->
   <link rel="stylesheet" href="bootstrap.min.css">
-  <!-- then load your css or type here -->
+
   <style>
-    html{ font-size: 16px; }
+    html{
+      font-size: 16px;
+    }
     body {
       background-color: #333;
+      font-family: Arial Black;
+      color: #444;
     }
     .channel{
-      background-color: #ddd;
-      border: 1px solid blue;
+      background-color: #999;
+      border-radius: 5px;
+      padding: 1rem;
+      margin-top: 0.75rem;
     }
   </style>
+
 </head>
 <body onload="init()">
 
@@ -25,8 +31,15 @@
 
     <div class="row justify-content-center">
 
-      <div id="fcc" class="channel col-md-10">freecodecamp</div>
-      <div id="sc2" class="channel col-md-10">esl_sc2</div>
+      <div id="fcc" class="channel col-md-10">
+        <span id="fccText">freecodecamp is not currently streaming</span>
+        <div id="fccStatus"></div>
+      </div>
+
+      <div id="sc2" class="channel col-md-10">
+        <span id="sc2Text">esl_sc2 is not currently streaming</span>
+        <div id="sc2Status"></div>
+      </div>
 
     </div>
 
