@@ -1,3 +1,12 @@
+//document.querySelector('body').onload = init;
+//^don't use that because you will only be able to call one function.
+
+//use this instead. load will wait for EVERYTHING to load including css and images.
+//from mdn: The DOMContentLoaded event is fired when the initial HTML document has been 
+//completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+window.addEventListener('DOMContentLoaded', init);
+
+
 // call this function when body is finished loading
 function init(){
 
@@ -22,7 +31,6 @@ function init(){
 
   $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/freecodecamp?callback=?',
   function(data) {
-    fccURL = data._links.channel;
 
     if (data.stream){
       fccText.innerHTML = 'freecodecamp is streaming: ';
@@ -35,7 +43,6 @@ function init(){
 
   $.getJSON('https://wind-bow.gomix.me/twitch-api/streams/esl_sc2?callback=?',
   function(data) {
-    sc2URL = data._links.channel;
 
     if (data.stream){
       sc2Text.innerHTML = 'ESL SC2 is streaming: ';
